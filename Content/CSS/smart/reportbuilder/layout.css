@@ -1,0 +1,1464 @@
+body {
+    font-family: Geneva,Arial,Helvetica,sans-serif;
+    font-size: 100%;
+    margin:0;
+    height:100%;
+}
+ul, li{
+    list-style:none;
+}
+h4{
+    font-family: cursive;
+    margin:0;
+    background:#EB8C00;
+    /*background:#438EB9;*/
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left: 10px;
+    margin-bottom:5px;
+    font-size:14px;
+    color: #fff;
+}
+
+h5,h6{
+	margin:0;
+}
+
+fieldset{
+    border:1px solid #ccc;
+}
+.hide{
+    display:none;
+}
+
+/*ContentWrapper*/
+#contentWrapper{
+    
+}
+#westRegion{
+    background-color: #EB8C00;
+    left: 0;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 90px;
+    z-index: 100;
+    /*padding-left:5px;*/
+}
+#westRegion #westViewTabs ul{
+    padding:0;
+    margin:0;
+}
+#westRegion #westViewTabs ul .viewTab{
+    background-color: #EB8C00;
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 140px;
+    width: 31px;
+    margin: 0px 0 10px;
+    border-left:5px solid #ccc;
+    
+}
+#westRegion #westViewTabs ul #viewTab1.viewTab{
+    height:120px;
+    
+}
+#westRegion #westViewTabs ul #viewTab2.viewTab{
+    height:84px;
+    
+}
+#westRegion #westViewTabs ul #viewTab3.viewTab{
+    height:120px;
+    
+}
+#westRegion #westViewTabs ul .viewTab > span{
+    z-index:2;
+    position:relative;
+    /*width:31px;
+    height:140px;*/
+    display:block;
+    cursor:pointer;
+
+    height: 36px;
+    transform: rotate(90deg);
+    width: 15px;
+    color:#ccc;
+}
+#westRegion #westViewTabs ul .viewTab.active, #westRegion #westViewTabs ul .viewTab.show
+{
+    border-left:5px solid #fff;
+}
+#westRegion #westViewTabs ul .viewTab span#viewTabLabel1{
+
+}
+#westRegion #westViewTabs ul .viewTab span#viewTabLabel2{
+
+}
+#westRegion #westViewTabs ul .viewTab.active span#viewTabLabel1{
+    color:#fff;
+}
+#westRegion #westViewTabs ul .viewTab.active span#viewTabLabel2{
+    color:#fff;
+}
+#westRegion #westViewTabs ul .viewTab.show span#viewTabLabel1{
+    color:#fff;
+}
+#westRegion #westViewTabs ul .viewTab.show span#viewTabLabel2{
+    color:#fff;
+}
+#westRegion #westViewTabs ul .viewTab:hover{
+    border-left:5px solid #fff;
+}
+#westRegion #westViewTabs ul .viewTab > span:hover{
+    color:#fff;
+}
+#westRegion li .westViewTab{
+     background-color: #F1F0EE;
+    display: none;
+    left: 36px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 350px;
+    z-index: -1;
+    height:100%;
+    border-right: 2px solid #EB8C00;
+    /*border-right: 2px solid #438EB9 ;*/
+}
+#westRegion li .westViewTab.free.show{
+    display:block;
+    z-index:1;
+}
+#westRegion li .westViewTab.docked{
+    display:block;
+}
+#westRegion li .westViewTab.free{
+    display:none;
+}
+#westRegion .undock, #westRegion .dock{
+     float: right;
+     width:16px;
+     height:16px;
+     position:relative;
+     top:5px;
+}
+#westRegion .dock {
+    background:url(../../../../Content/Images/icons/filter.png) no-repeat;
+}
+#westRegion .undock {
+    display: none;
+    background:url(../../../../Content/Images/icons/del.png) no-repeat;
+}
+/*View style*/
+#bindSubjectViews{
+    font-family: Verdana;
+}
+#westRegion #westViewTabs #bindSubjectViews ul.bindViewsBox{
+    padding:0 10px;
+    color: #5F5F5F;
+}
+#bindSubjectViews .bindViewsTree {
+    margin-bottom: 10px;
+    font-size:14px;
+}
+#bindSubjectViews .bindViewsTree h5{
+    margin-bottom: 5px;   
+}
+#bindSubjectViews .bindViewsTree li{
+    margin-bottom: 5px;
+    font-size:13px;
+}
+#bindSubjectViews div.k-treeview
+{
+    overflow:hidden;
+}
+#bindSubjectViews .bindViewsBox .bindViewsTree .k-in
+{
+    cursor:pointer;
+}
+#bindSubjectViews .bindViewsBox  .bindViewsTree .k-in.k-state-hover{
+    background:none;
+    color:#ef6100;
+}
+#bindSubjectViews .bindViewsBox .bindViewsTree .k-in.k-state-selected
+{
+    background:none;
+    text-shadow:none;
+    box-shadow:none;
+    color:#ef6100;
+}
+#bindSubjectViews .bindViewsBox .bindViewsTree .k-in.k-state-focused
+{
+    background:none;
+    text-shadow:none;
+    box-shadow:none;
+    color:#ef6100;
+}
+
+/*Subject style*/
+#bindSubjects{
+	
+}
+#bindDataSubject.bindDataSubject {
+    /*border-bottom: 1px dashed #438EB9;*/
+    padding: 5px 10px;
+}
+#bindDataSubject.bindDataSubject select{
+    width:90%;
+    font-size:14px;
+}
+#bindDataSubject.bindDataSubject .subjectButton{
+    float:right;
+    cursor:pointer;
+    +position:absolute;
+    +top:44px;
+}
+#bindDataSubject.bindDataSubject .subjectButton span{
+    display:inline-block;
+    background:url(../../../../Content/Images/icons/dot.png) no-repeat;
+    height: 8px;
+    width: 8px;
+    cursor:pointer;
+}
+#bindMeasuresAndDimensions{
+    overflow:auto;
+}
+#bindMeasuresAndDimensions #bindMeasures{
+    padding: 10px;
+}
+#bindMeasuresAndDimensions #bindDimensions{
+    padding: 10px;
+}
+#bindMeasuresAndDimensions .measureAndDimensionLabel{
+    cursor:pointer;
+    font-size:13px;
+    margin-bottom: 10px;
+}
+#bindMeasuresAndDimensions ul{
+    padding:0;
+}
+#bindMeasuresAndDimensions ul>li {
+    cursor:pointer;
+    font-size:13px;
+    padding-left:10px;
+    margin-bottom: 5px;
+}
+#bindDataSubjectDescription{
+    border-top:1px dashed #EB8C00;
+    padding:5px 10px;
+    height:30px;
+}
+#bindFields.bindFields{
+    height: 310px;
+    overflow: hidden;
+    border-top: 1px dashed #EB8C00;
+}
+#bindFields.bindFields #updateChartButton{
+    color: #EB8C00;
+    float: right;
+    margin-top: 5px;
+    position: relative;
+    right: 5px;
+    cursor:pointer;
+}
+#bindFields.bindFields h4{
+    display:none;
+}
+#bindFields.bindFields .fieldBox{
+    float: left;
+    height: 130px;
+    margin: 8px;
+    width: 44%;
+}
+#bindFields.bindFields .fieldBox .ui-state-hover{
+    background:#e6e6e6;
+}
+#bindFields.bindFields .fieldBox .ui-state-default{
+    background:#e6e6e6;
+}
+#bindFields.bindFields .fieldBox h5{
+    padding:4px 5px;
+    font-size:12px;
+}
+#bindFields.bindFields .fieldBox ul{
+     height: 115px;
+    margin: 0;
+    padding: 0;
+    border:1px solid #ccc;
+    overflow:hidden;
+}
+#bindFields.bindFields .fieldBox ul.forChart{
+    height: 115px;
+    margin: 0;
+    padding: 0;
+    border:1px solid #ccc;
+}
+#bindFields.bindFields .fieldBox ul.forGrid{
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border:none;
+}
+#bindFields.bindFields .fieldBox ul>li{
+background: rgb(249,249,249); /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y5ZjlmOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMmYyZjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(249,249,249,1) 0%, rgba(242,242,242,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,249,249,1)), color-stop(100%,rgba(242,242,242,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(249,249,249,1) 0%,rgba(242,242,242,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(249,249,249,1) 0%,rgba(242,242,242,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(249,249,249,1) 0%,rgba(242,242,242,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(249,249,249,1) 0%,rgba(242,242,242,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-8 */
+cursor:pointer;
+border-bottom: 1px solid #ddd;
+font-size:13px;
+min-height: 20px;
+}
+#bindFields.bindFields .fieldBox ul>li .fieldText{
+    float:left;
+    padding: 2px 0 2px 5px;
+}
+#bindFields.bindFields .fieldBox ul>li .toolIcon{
+    float:right;
+    
+}
+
+#bindFields.bindFields .fieldBox ul>li .toolIcon .filterIcon{
+	background: url(../../../../Content/Images/icons/filter.png) no-repeat;
+width:10px;
+height:10px;
+display:inline-block;
+margin-top:5px;
+}
+
+/*#bindFields.bindFields .fieldBox ul>li .toolIcon .editIcon{
+background: url(../cImages/16/reply.png) no-repeat;
+width:10px;
+height:10px;
+display:inline-block;
+margin-top:5px;
+}*/
+
+#bindFields.bindFields .fieldBox ul>li .toolIcon .deleteIcon{
+background: url(../../../../Content/Images/icons/del.png) no-repeat;
+width:10px;
+height:10px;
+display:inline-block;
+margin-top:5px;
+}
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable {
+    padding: 0;
+    border:1px solid #EB8C00;
+    border-radius:10px;
+}
+
+#editMenu{
+    background: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    position: absolute;
+}
+#editMenu ul{
+    padding:0;
+    margin:0;
+}
+#editMenu ul li{
+    font-size:12px;
+    padding:5px;
+}
+#editMenu ul li:hover{
+    background:#C4E1A4;
+}
+#subjectMenu {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #AAAAAA;
+    position: absolute;
+    z-index:5;
+}
+#subjectMenu ul{
+    padding:0;
+    margin:0;
+}
+#subjectMenu ul li{
+    font-size:14px;
+    padding:5px;
+}
+#subjectMenu ul li:hover{
+    background:#C4E1A4;
+}
+#explanation{
+    border-top: 1px dashed #848484;
+    font-size: 12px;
+    padding: 5px;
+    text-align: center;
+    min-height:10px;
+}
+.ui-dialog-titlebar.ui-widget-header{
+    background: none repeat scroll 0 0 #EB8C00;
+    color: #f1f1f1;
+    border:none;
+    font-size:14px;
+    border-radius:0;
+}
+.ui-dialog-titlebar.ui-widget-header button{
+    display:none;
+}
+
+.ui-dialog-titlebar.ui-widget-header button.customized-button{
+    display:block;
+    background:none;
+    border:none;
+}
+/*EastRegion*/
+
+#propertyTabs{
+	
+}
+#propertyTabs .ui-state-default.ui-corner-top {
+    text-align: center;
+    width: 60px;
+}
+#propertyTabs.ui-tabs .ui-tabs-nav li a {
+    display: block;
+    float: none;
+    font-size: 12px;
+    padding: 0.5em;
+}
+#accordionPane{
+    margin-top:20px;
+}
+
+#accordionPane .accordionHeader{
+    font-size:12px;
+}
+#accordionPane .accordionContent{
+    font-size:12px;
+    height:20px;
+}
+#accordionPane .accordionContent p{
+    margin:0;
+}
+
+/*Property Pane*/
+#eastRegion{
+
+} 
+#propertyPanel{
+    /*background: none repeat scroll 0 0 #FAF9F6;*/
+    background:#EB8C00;
+    height: 100%;
+    overflow:hidden;
+}
+#propertyPanel.expanded{
+    /*background: none repeat scroll 0 0 #FAF9F6;*/
+    background:#FAF9F6;
+}
+#propertyPanel #propertyHeader{
+
+
+}
+#propertyPanel #propertyHeader h4{
+    display:none;
+    margin-bottom:0;
+}
+#propertyPanel #propertyHeader .propertyArrow.fa-arrow-circle-left{
+    color: #f9f9f9;
+    margin-left:10px;
+}
+#propertyPanel #propertyHeader .propertyArrow.fa-arrow-circle-right{
+    color: #F9F9F9;
+    margin-top: 5px;
+    position: absolute;
+    right: 5px;
+}
+#propertyPanel #propertyBox{
+    padding:10px 5px;
+}
+#propertyPanel .p_accordionHeader{
+     background: #00BE9C;
+    color: #F9F9F9;
+    border-top:1px solid #fff;
+    padding: 2px 5px;
+    border-radius:8px;
+}
+#propertyPanel .p_accordionHeader:first-child{
+    border-top:none;
+}
+#propertyPanel .p_accordionContent{
+    display:none;
+    overflow:auto;
+    padding:5px;
+    font-size:13px;
+}
+#propertyPanel .p_accordionContent select{
+    width:80%;
+}
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled{
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
+    zoom:1;
+}
+#propertyPanel #chartPropertyBox .dpBox{
+   margin-bottom:5px;
+}
+#propertyPanel #gridPropertyBox{
+    overflow:auto;
+    font-size:13px;
+}
+.leftAlign{
+    text-align:left;
+}
+.centerAlign{
+    text-align:center;
+}
+.rightAlign{
+    text-align:right;
+}
+
+.k-grid-header .k-header.headerLeftAlign{
+    text-align:left;
+}
+.k-grid-header .k-header.headerCenterAlign{
+    text-align:center;
+}
+.k-grid-header .k-header.headerRightAlign{
+    text-align:right;
+}
+
+/*PopUpSubjectDialog*/
+.ui-dialog .ui-dialog-content{
+    background: #f9f9f9; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y5ZjlmOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2U5ZTllOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmYmZiZmIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #f9f9f9 0%, #e9e9e9 50%, #fbfbfb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(50%,#e9e9e9), color-stop(100%,#fbfbfb)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f9f9f9 0%,#e9e9e9 50%,#fbfbfb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f9f9f9 0%,#e9e9e9 50%,#fbfbfb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f9f9f9 0%,#e9e9e9 50%,#fbfbfb 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f9f9f9 0%,#e9e9e9 50%,#fbfbfb 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#fbfbfb',GradientType=0 ); /* IE6-8 */
+}
+#subjectDialog{
+
+}
+#subjectDialog .ui-state-disabled{
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
+    zoom:1;
+}
+#subjectDialog .ui-state-hover,#subjectDialog .ui-state-default{
+    background:#e6e6e6;
+}
+#subjectDialog .subjectSelection{
+    font-size:14px;
+    border-top:1px solid #BBBBBB;
+    border-bottom:1px solid #BBBBBB;
+    padding:10px;
+}
+#subjectDialog .selectionList{
+    padding:10px;
+}
+#subjectDialog .selectionList h5{
+    margin-bottom:10px;
+    font-size:13px;
+}
+#subjectDialog #subjectContainer{
+     
+     overflow:hidden;
+}
+#subjectDialog #defaultSubjects{
+    border: 1px solid #CCCCCC;
+    float: left;
+    min-height: 500px;
+    width: 48%;
+    overflow:hidden;
+}
+#subjectDialog #currentSubjects{
+    border: 1px solid #CCCCCC;
+    float: right;
+    min-height: 500px;
+    width: 48%;
+     overflow:hidden;
+}
+#subjectDialog #currentSubjects .selectionList{
+   height:360px;
+}
+#subjectDialog #currentSubjects .selectionList ul{
+   height:150px;
+   overflow:auto;
+}
+#subjectDialog #defaultSubjects .selectionList ul{
+   height:150px;
+   overflow:auto;
+}
+#subjectDialog #currentSubjects .selectionList ul li{
+   overflow:hidden;
+}
+#subjectDialog #currentSubjects .selectionList ul li span{
+   float:left;
+}
+#subjectDialog #currentSubjects .selectionList ul li input{
+   float:right;
+}
+#subjectDialog #currentSubjects .subjectDescription{
+    border-top:1px solid #ccc;
+}
+#subjectDialog #currentSubjects .subjectDescription textarea{
+    border:none;
+    resize:none;
+    width:100%;
+    height:73px;
+}
+#subjectDialog ul{
+    padding:0;
+    font-size:14px;
+    margin:0;
+}
+
+#subjectDialog .selectionItemLabel {
+    padding: 10px;
+}
+#subjectDialog ul.selectionItems {
+    padding-left: 30px;
+    height:160px;
+}
+#subjectDialog #selectionList > ul > li:first-child{
+    border-bottom:1px solid #BBBBBB;
+}
+#subjectDialog ul li{
+    margin-bottom:5px;
+    padding-left:10px;
+    cursor:pointer;
+}
+#subjectDialog .selectionResult{
+    height:200px;
+    overflow:auto;
+}
+#subjectDialog .currentSubjectDescription{
+    overflow: hidden;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    border-top:1px solid #ccc;
+}
+#subjectDialog .currentSubjectDescription input{
+   
+}
+#subjectDialog #subjectDialogHeader{
+    display:none;
+}
+#subjectDialog #subjectDialogHeader h5{
+    
+}
+#subjectDialog #subjectDialogMenu{
+
+}
+#subjectDialog #addSubjectArea h5{
+    font-size:12px;
+    padding:10px;
+}
+#subjectDialog #addSubjectArea ul{
+    height:164px;
+    overflow:auto;
+    padding-left: 30px;
+}
+#subjectDialog #addSubjectArea ul#addMeasuresList{
+    border-bottom:1px solid #ccc;
+}
+#subjectDialog #addSubjectArea #addSubjectExplanation{
+    border-top:1px solid #ccc;
+    padding: 10px 0;
+    text-align:center;
+}
+#subjectDialog #currentSubjectButtons{
+    float:right;
+    +position:absolute;
+    +margin-top:4px;
+    +right:40px;
+}
+.inlineBlock{
+    display:inline-block;
+}
+#subjectDialog #currentSubjectButtons span.add{
+     width:16px;
+	height:16px;
+	background:url(../../../../Content/Images/16/add.png) no-repeat;
+    display:inline-block;
+    cursor:pointer;
+}
+#subjectDialog #currentSubjectButtons span.remove{
+     width:16px;
+	height:16px;
+	background:url(../../../../Content/Images/16/remove.png) no-repeat;
+    cursor:pointer;
+}
+#subjectDialog #currentSubjectButtons span.rename{
+     width:16px;
+	height:16px;
+	background:url(../../../../Content/Images/16/reply.png) no-repeat;
+    cursor:pointer;
+}
+#subjectDialog #subjectDialogMenu span.save{
+    width:16px;
+	height:16px;
+	background:url(../../../../Content/Images/16/save.png) no-repeat;
+    display:inline-block;
+    cursor:pointer;
+}
+#subjectDialog #subjectDialogMenu span.close{
+    width:16px;
+	height:16px;
+	background:url(../../../../Content/Images/16/delete.png) no-repeat;
+    display:inline-block;
+    cursor:pointer;
+}
+#jqContextMenu{
+    font-size:12px;
+}
+
+#defaultSubjects .activeItem{
+    color:#39db3d;
+}
+#defaultSubjects .disableItem{
+    color:#BBBBBB;
+}
+#currentSubjects .activeItem{
+    color:#39db3d;
+}
+#subjectDialog #dragButtons{
+    left: 384px;
+    position: absolute;
+    top: 260px;
+}
+#subjectDialog #dragButtons .toRight{
+    display:block;
+    width:36px;
+	height:32px;
+	background:url(../../../../Content/Images/32/arrow-blue-right.png) no-repeat;
+    cursor:pointer;
+}
+#subjectDialog #dragButtons .toLeft{
+    display:block;
+    width:32px;
+	height:32px;
+	background:url(../../../../Content/Images/32/arrow-green-left.png) no-repeat;
+    cursor:pointer;
+}
+.ui-widget-overlay{
+    background:#DDDDDD;
+}
+#addSubjectNameBox .addSubjectNameButtons{
+    margin-top:10px;
+    text-align:center;
+}
+#addSubjectNameBox .addSubjectNameButtons button{
+    margin-right:10px;
+}
+#subjectRenameBox .subjectReNameButtons{
+    margin-top:10px;
+    text-align:center;
+}
+#subjectRenameBox .subjectReNameButtons button{
+    margin-right:10px;
+}
+#filterDialog{
+
+}
+#filterDialog #filterDialogMenu{
+
+}
+#filterDialog #filterDialogMenu span{
+    width:16px;
+	height:16px;
+    cursor:pointer;
+    display:inline-block;
+}
+#filterDialog #filterDialogMenu span.save{
+	background:url(../../../../Content/Images/16/save.png) no-repeat;
+}
+#filterDialog #filterDialogMenu span.close{
+	background:url(../../../../Content/Images/16/delete.png) no-repeat;
+}
+#filterDialog #filterContainer{
+    border:1px solid #f1f1f1;
+    height:500px;
+    font-size:14px;
+}
+#filterDialog #filterContainer .filterBox{
+    height:220px;
+    margin:10px;
+}
+#filterDialog #filterContainer .filterBox input#checkBox1{
+
+}
+#filterDialog #filterContainer .filterBox .filterPanel{
+
+}
+#filterDialog #filterContainer .filterBox .filterPanel select.filterSelect{
+
+}
+#filterDialog #filterContainer .filterBox .filterPanel .filterSelectHeader{
+    padding: 5px;
+    width: 200px;
+    border:1px solid #1ABC9C;
+    overflow:hidden;
+    border-radius:5px;
+}
+#filterDialog #filterContainer .filterBox .filterPanel .filterSelectHeader span{
+    float:left;
+}
+#filterDialog #filterContainer .filterBox .filterPanel .filterSelectHeader .filterSelectIcon{
+    display:inline-block;
+    float:right;
+    cursor:pointer;
+    font-size:18px;
+}
+#filterDialog #filterContainer .filterBox .filterPanel .filterSelectHeader .filterSelectIcon .fa-sort-down{
+    margin-top:-2px;
+}
+#filterDialog #filterContainer .filterBox .filterPanel .filterSelectHeader .filterSelectIcon .fa-sort-up{
+    margin-top:6px;
+}
+#filterDialog #filterContainer .filterBox .filterPanel .filterSelectItems{
+    border: 1px solid #2D91D1;
+    display: none;
+    height: 140px;
+    margin: 0;
+    overflow: auto;
+    padding: 5px;
+    width: 200px;
+    border-radius:5px;
+    margin-top:10px;
+}
+#filterDialog #filterContainer #conditionBox{
+    border-top:1px solid #f1f1f1;
+    height:200px;
+    margin:10px;
+    padding-top:10px;
+}
+#filterDialog #filterContainer #conditionBox input#checkBox2{
+
+}
+#filterDialog #filterContainer #conditionBox .conditionPanel{
+
+}
+#filterDialog #filterContainer #conditionBox .conditionPanel select.filterSelect{
+    display:inline-block;
+}
+#filterDialog #filterContainer #conditionBox .conditionPanel select.conditionSelect{
+    display:inline-block;
+}
+#filterDialog #filterContainer #conditionBox .conditionPanel input.valueSelect{
+    display:inline-block;
+}
+/*CenterRegion*/
+#centerRegion{
+    margin-left:36px;
+    background-color:#fff;
+}
+#chartPaneContainer{
+    float:left;
+    height:100%;
+    overflow:hidden;
+    background:#F5F4F3;
+    width:100%;
+}
+#chartMainPane{
+	
+	padding:10px;
+    
+}
+#chartMainPane .ui-widget-content{
+    background:none;
+    border:none;
+}
+#chartMainPane .c_box{
+	float:left;
+    border:none;
+    background:none;
+}
+
+.ui-state-hover {
+    background:none;
+}
+
+#chartMainPane #chartPaneTabs{
+    font-size:14px;
+    padding:0;
+    +overflow:hidden;
+}
+#chartMainPane #chartPaneTabs li .ui-icon-close {
+    cursor: pointer;
+    float: right;
+    margin: 0.4em 0.2em 0 0;
+}
+
+#chartPaneTabs .addTabButton{
+    width:16px;
+	height:16px;
+	background:url(../../../../Content/Images/16/add.png) no-repeat center center;
+
+}
+#chartPaneTabs .ui-tabs-panel{
+
+    padding:0;
+    overflow:hidden;
+}
+#chartPaneTabs .showChart{
+
+    border:1px solid #EB8C00;
+    overflow:hidden;
+}
+#chartPaneTabs .showChart.ui-state-hover{
+    background:none;
+}
+#chartPaneTabs .showDescription{
+    border-top:1px solid #ccc;
+    padding-top:10px;
+    height:130px;
+    overflow:hidden;
+}
+#chartPaneTabs .showDescription .dexcriptionText{
+    padding:5px 10px;
+    border:1px solid #ccc;
+    border-top:none;
+}
+#chartPaneTabs .showDescription .ui-state-default{
+    background:none;
+}
+#chartPaneTabs .showDescription textarea{
+    width:99%;
+    +width:98%;
+    resize:none;
+    
+}
+.jCarouselLite{
+    overflow:hidden;
+    height:35px;
+   +position:relative;
+}
+.jCarouselLite ul.ui-tabs-nav{
+   left:0;
+   position:relative;
+   height:35px;
+   background:#EB8C00;
+   padding:0;
+   border:none;
+   overflow:hidden;
+   border-radius:0;
+}
+.jCarouselLite .ui-tabs-nav li{
+    width:130px;
+    margin:0;
+    border-radius:0;
+    height:30px;
+    overflow:hidden;
+}
+.jCarouselLite .ui-tabs-nav li a.ui-tabs-anchor{
+    padding:6px;
+    width:90px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.jCarouselLite .ui-tabs-nav li a.ui-tabs-anchor input{
+    border:none;
+    background:none;
+}
+.jCarouselLiteContainer{
+    width:100%;
+    background:#EB8C00;
+}
+.jCarouselButtons{
+    right:2px;
+    position:absolute;
+    top:0;
+    cursor:pointer;
+}
+.jCarouselButtons span{
+    display:inline-block;
+    padding:8px 2px;
+}
+.jCarouselButtons .prev{
+    background: url("../../../../Content/Images/16/prev.png") center center no-repeat;
+    height: 16px;
+    width: 16px;
+}
+.jCarouselButtons .next{
+    background: url("../../../../Content/Images/16/next.png") center center no-repeat;
+    height: 16px;
+    width: 16px;
+}
+
+#chartMainView{
+    padding:10px;
+}
+#chartMainView #viewContainer{
+    background: none repeat scroll 0 0 #EB8C00;
+    overflow: hidden;
+    padding: 2px;
+}
+#chartMainView .columnView {
+    background: none repeat scroll 0 0 #F5F4F3;
+    overflow: hidden;
+    padding:20px 0;
+}
+#chartMainView #oneColumnView{
+
+}
+#chartMainView #oneColumnView ul.viewBox{
+    width:96%;
+}
+#chartMainView #oneRowView ul.viewBox{
+    width:96%;
+}
+#chartMainView .rowView ul.viewBox > li{
+    float:left;
+}
+#chartMainView #twoColumnView{
+
+}
+#chartMainView #twoColumnView ul.viewBox{
+    width:46%;
+}
+#chartMainView #twoColumnView ul.viewBox1{
+    margin-right:1%;
+}
+#chartMainView #twoColumnView ul.viewBox2{
+}
+#chartMainView #twoRowView ul.viewBox{
+    width:96%;
+}
+#chartMainView #twoRowView ul.viewBox1{
+    margin-bottom:30px;
+}
+#chartMainView #twoRowView ul.viewBox2{
+}
+
+#chartMainView #threeColumnView{
+
+}
+#chartMainView #threeColumnView ul.viewBox{
+    width:29%;
+}
+#chartMainView #threeRowView{
+
+}
+#chartMainView #threeRowView ul.viewBox{
+    width:96%;
+}
+#chartMainView #threeRowView ul.viewBox1{
+    margin-bottom:30px;
+}
+#chartMainView #threeRowView ul.viewBox2{
+    margin-bottom:30px;
+}
+#chartMainView #quarterView{
+
+}
+#chartMainView #quarterView ul.viewBox{
+    width:46%;
+}
+#chartMainView #quarterView ul.viewBox1{
+   margin-right:1%;
+   margin-bottom:30px;
+}
+#chartMainView #quarterView ul.viewBox2{
+   margin-right:1%;
+   margin-bottom:30px;
+}
+#chartMainView #quarterView ul.viewBox3{
+    margin-right:1%;
+}
+#chartMainView ul.viewBox{
+    float: left;
+    height: 580px;
+    margin: 0 2%;
+    padding: 0;
+    overflow:hidden;
+    border:1px dashed #ccc;
+}
+#chartMainView ul.viewBox > li{
+    overflow:hidden;
+    border:1px solid #B7DEED;
+    margin:0 auto;
+}
+#chartMainView ul.viewBox > li.viewItem-placeholder{
+    overflow:hidden;
+    border:1px solid #EB8C00;
+}
+#chartMainView ul.viewBox > li.ui-sortable-helper{
+    overflow:hidden;
+    border:1px solid #1ABC9C;
+}
+#chartMainView ul.viewBox > li.viewItem > div{
+    width:100%;
+    height:100%;
+}
+#chartMainView ul.viewBox > li.viewItem > i{
+    position:absolute;
+    display:none;
+    color:#EB8C00;
+    z-index:1;
+    cursor:pointer;
+}
+#chartMainView ul.viewBox > li.viewItem:hover > i{
+    display:block;
+}
+#chartMainView #viewToolBar{
+    width:100%;
+    overflow:hidden;
+    height:40px;
+}
+#chartMainView #viewToolBar #viewButton{
+    float:right;
+}
+
+/*North Region*/
+#northRegion{
+    overflow:hidden;
+    background:#5f5f5f;
+}
+#navHeader .nav-inner{
+    height:50px;
+    padding:0 20px;
+    margin:0 auto;
+}
+#navHeader .nav-inner #nav_logo{
+
+    float:left;
+}
+#navHeader .nav-inner #nav_logo a{
+
+}
+#navHeader .nav-inner #nav_logo img{
+    margin-top:7px;
+    border:none;
+}
+#navHeader .nav-inner #nav_menu{
+    float:right;
+    padding:11px;
+}
+#navHeader .nav-inner #nav_menu a{
+    padding:20px;
+    color:#ccc;
+    text-decoration:none;
+    +display:block;
+}
+#navHeader .nav-inner #nav_menu a:hover{
+    background:#EF6100;
+}
+#navHeader .nav-inner #nav_menu #nav_tool{
+    display:inline-block;
+    +float:left;
+    +position:relative;
+    +top:-19px;
+}
+#navHeader .nav-inner #nav_menu #nav_account{
+    display:inline-block;
+    +float:left;
+    +position:relative;
+    +top:-19px;
+}
+#navHeader .nav-inner #nav_menu #nav_people{
+
+}
+#navHeader .nav-inner #nav_menu #nav_star{
+
+}
+#navHeader .nav-inner #nav_menu #nav_map{
+
+}
+#navHeader .nav-inner #nav_menu #nav_close{
+
+}
+#navHeader .nav-inner #nav_menu .nav-button{
+    display:inline-block;
+    +float:left;
+    +position:relative;
+    +top:-19px;
+}
+#navHeader .nav-inner i{
+    font-size:20px;
+    color:#fff;
+}
+#topToolBar{
+    overflow:hidden;
+    height:40px;
+    background: #484848; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ4NDg0OCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzNjM2MzYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #484848 0%, #363636 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#484848), color-stop(100%,#363636)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #484848 0%,#363636 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #484848 0%,#363636 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #484848 0%,#363636 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #484848 0%,#363636 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#484848', endColorstr='#363636',GradientType=0 ); /* IE6-8 */
+
+
+}
+#topToolBar i{
+    color: #fff;
+    vertical-align:middle;
+    margin-top:10px;
+}
+#topToolBar .bar-inner{
+    height: 100%;
+    overflow: hidden;
+    float:left;
+}
+#topToolBar .help-info{
+    height: 100%;
+    overflow: hidden;
+    float:right;
+    color:#fff;
+}
+#topToolBar .help-info i{
+    margin-right:12px;
+    cursor:pointer;
+    font-size:18px;
+}
+#topToolBar .bar-inner #bar_icon {
+    width:36px;
+    border:none;
+}
+#topToolBar .bar-inner .bar-icon {
+    display:block;
+    width:100%;
+    height:100%;
+    text-align:center;
+}
+#topToolBar .bar-inner .bar-icon i {
+    color:#EB8C00;
+}
+#topToolBar .bar-inner > div{
+    float:left;
+    height: 100%;
+    /*border-left: 1px solid #4A4A4A;
+    border-right: 1px solid #292929;*/
+    border-left: 1px solid #4B4B4B;
+    border-right: 1px solid #383838;
+}
+#topToolBar .bar-inner > div >ul{
+    height: 100%;
+}
+#topToolBar .bar-inner > div >ul>li{
+    height: 100%;
+}
+#topToolBar .bar-inner > div > ul > li > a
+{
+    display: block;
+    height: 100%;
+    text-align: center;
+    text-decoration:none;
+}
+#topToolBar .bar-inner > div > ul > li > a:hover{
+    background:#ef6100;
+}
+#topToolBar ul{
+    padding:0;
+    margin:0;
+}
+#topToolBar li{
+    cursor:pointer;
+}
+#topToolBar li:hover{
+    background:#ef6100;
+}
+#topToolBar #fileButtons{
+
+}
+#topToolBar #fileButtons .fileOptions{
+    overflow:hidden;
+}
+#topToolBar #fileButtons .fileOptions .fileOption{
+    float: left;
+    height: 100%;
+    width: 40px;
+}
+#topToolBar #fileButtons .fileOptions #file_open.fileOption input{
+   cursor: pointer;
+   display: block;
+   height: 25px;
+   opacity: 0;
+   position: absolute;
+   top: 6px;
+   width: 25px;
+   filter: alpha(opacity=0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	zoom:1;
+    overflow:hidden;
+    +font-size:4px;
+    +left:35px;
+}
+#topToolBar .subOptions{
+    position: absolute;
+    top: 90px;
+    z-index: 101;
+    +margin-left:-26px;
+}
+#topToolBar .subOptions li:hover{
+    background:#F5F4F3;
+}
+#topToolBar .subOptions .option-icon{
+    margin-right:10px;
+}
+#topToolBar .subOptions .option-icon img{
+    vertical-align:bottom;
+}
+#topToolBar #fileButtons .fileOptions .fileOption ul.fileOptionItems{
+   background: none repeat scroll 0 0 #fff;
+    border: 1px solid #CCCCCC;
+    display: none;
+    font-size: 12px;
+}
+#topToolBar #fileButtons .fileOptions .fileOption ul.fileOptionItems.active{
+   display:block;
+}
+#topToolBar #fileButtons .fileOptions .fileOption li{
+    height: auto;
+    padding: 5px 10px;
+}
+#topToolBar #fileButtons .fileOptions .fileOption li:hover{
+}
+#topToolBar #chartTypePaneButtons{
+
+}
+#topToolBar #chartTypePaneButtons .chartTypes{
+    overflow: hidden;
+}
+#topToolBar #chartTypePaneButtons .chartTypes .chartType{
+    float: left;
+    height: 40px;
+    width: 40px;
+}
+#topToolBar #chartTypePaneButtons .chartTypes .chartType:first-child{
+
+}
+#topToolBar #tableButtons{
+
+}
+#topToolBar #tableButtons .tableOptions{
+    overflow:hidden;
+}
+#topToolBar #tableButtons .tableOptions .tableOption{
+    float: left;
+    height: 40px;
+    width: 40px;
+}
+#topToolBar #tableButtons .tableOptions .tableOption:first-child{
+
+}
+#topToolBar #doButtons{
+
+}
+#topToolBar #doButtons .doOptions{
+    overflow:hidden;
+}
+#topToolBar #doButtons .doOptions .doOption{
+    float: left;
+    height: 100%;
+    width: 40px;
+}
+#topToolBar #doButtons .doOptions .doOption:first-child{
+}
+#topToolBar #tabSwitchButtons{
+
+}
+#topToolBar #tabSwitchButtons .tabSwitchOption{
+    float: left;
+    height: 100%;
+    width: 40px;
+}
+#topToolBar #tabSwitchButtons .tabSwitchOption ul{
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #CCCCCC;
+    display: none;
+    font-size: 12px;
+    overflow:hidden;
+    height:auto;
+}
+#topToolBar #tabSwitchButtons .tabSwitchOption ul.active{
+    display:block;
+}
+#topToolBar #tabSwitchButtons .tabSwitchOption ul li{
+    height: 15px;
+    padding: 5px 10px;
+    overflow:hidden;
+}
+#topToolBar #tabSwitchButtons .tabSwitchOption ul li:hover{
+    display:block;
+}
+#topToolBar #tabSwitchButtons .tabSwitchOption .tabSwitchEx{
+
+}
+#topToolBar #tabSwitchButtons .tabSwitchOption .tabSwitchEx span{ 
+    height: 16px;
+    width: 16px;
+    display:block;
+}
+#topToolBar #tabSwitchButtons .tabSwitchOption .tabSwitchEx span.collapsed{
+    background: url("../../../../Content/Images/16/prev.png") center center no-repeat;
+}
+#topToolBar #tabSwitchButtons .tabSwitchOption .tabSwitchEx span.expanded{
+    background: url("../../../../Content/Images/16/next.png") center center no-repeat;
+}
+#topToolBar #refreshButton{
+}
+#topToolBar #refreshButton .refreshOptions{
+    overflow:hidden;
+}
+#topToolBar #refreshButton .refreshOptions .refreshOption{
+    float: left;
+    height: 100%;
+    width: 40px;
+}
+#topToolBar #switchButton{
+}
+#topToolBar #switchButton .switchOptions{
+    overflow:hidden;
+}
+#topToolBar #switchButton .switchOptions .switchOption{
+    float: left;
+    height: 100%;
+    width: 40px;
+}
+
+#topToolBar #viewModalButtons{
+}
+#topToolBar #viewModalButtons .viewModalOptions{
+    overflow:hidden;
+}
+#topToolBar #viewModalButtons .viewModalOptions .viewModalOption{
+    float: left;
+    height: 100%;
+    width: 40px;
+}
+#topToolBar #viewModalButtons .viewModalOptions .viewModalOption .viewModalOptionItems{
+    background: #F2F9F9;
+    border: 1px solid #AAAAAA;
+    display: none;
+    overflow: hidden;
+    width: 86px;
+}
+#topToolBar #viewModalButtons .viewModalOptions .viewModalOption .viewModalOptionItems.active{
+    display:block;
+}
+#topToolBar #viewModalButtons .viewModalOptions .viewModalOption .viewModalOptionItems li{
+    float:left;
+    margin:5px;
+}
+
+#topToolBar #clearButton{
+}
+#topToolBar #clearButton .clearOptions{
+    overflow:hidden;
+}
+#topToolBar #clearButton .clearOptions .clearOption{
+    float: left;
+    height: 100%;
+    width: 40px;
+}

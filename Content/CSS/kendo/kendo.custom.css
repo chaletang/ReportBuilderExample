@@ -1,0 +1,13 @@
+﻿.k-state-hover
+{
+    background-color: #602320 !important;
+}
+
+.k-state-selected
+{
+    background-color: #9a9998 !important;
+}
+.k-textbox:hover .k-i-search {
+    background-position: -32px -240px !important;
+    background-color: #8EBC00 !important;
+}

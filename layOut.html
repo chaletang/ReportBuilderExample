@@ -1,0 +1,790 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>drag</title>
+    <meta name="description" content="">
+    <meta name="author" content="Chale">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="Content/CSS/font/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="Content/CSS/font/font-awesome-ie7.css" />
+    <link rel="stylesheet" type="text/css" href="Content/CSS/font/font-icomoon.css" />
+    <link rel="stylesheet" type="text/css" href="Content/CSS/font/font-icomoon-ie7.css" />
+    <link href="Content/CSS/kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="Content/CSS/kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="Content/CSS/kendo/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="Content/CSS/kendo/kendo.dataviz.default.min.css" rel="stylesheet" />
+    <!-- -->
+    <link rel="stylesheet" type="text/css" href="Content/CSS/other/smart_wizard.css" />
+    <!-- -->
+    <link rel="stylesheet" type="text/css" href="Content/CSS/smart/reportbuilder/layout.css" />
+
+    <script type="text/javascript" src="Content/Scripts/jquery/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="Content/Scripts/jquery/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="Content/Scripts/jquery/jquery.layout-latest.js"></script>
+    <script type="text/javascript" src="Content/Scripts/kendo/kendo.all.min.js"></script>
+    <!-- -->
+    <script type="text/javascript" src="Content/Scripts/other/jquery.smartWizard-2.0.min.js"></script>
+    <script type="text/javascript" src="Content/Scripts/other/jquery.PrintArea.js"></script>
+    <!-- -->
+    <script type="text/javascript" src="Content/Scripts/smart/reportbuilder/virsJSON.js"></script>
+    <script type="text/javascript" src="Content/Scripts/smart/reportbuilder/smart.app.reportBuilder.js"></script>
+    <script type="text/javascript" src="Content/Scripts/smart/reportbuilder/reportBuilder.js"></script>
+
+</head>
+<body>
+    <div id="northRegion">
+        <div id="navHeader">
+            <!--<img src="cImages/icons/logo.png" />-->
+            <div class="nav-inner">
+                <div id="nav_logo">
+				<h2 style="margin-bottom: 0;color: #fff;margin-top: 10px;">Report Example</h2>
+                    <!--<a href="javascript:;">
+                        <img src="Content/Images/icons/SSLogoV2.png" />
+                    </a>-->
+                </div>
+                <div id="nav_menu">
+                    <div id="nav_tool">
+                        <a href="javascript:;">
+                            <i class="fa-wrench"></i>
+                        </a>
+                    </div>
+                    <div id="nav_account">
+                        <a href="javascript:;">Welcome,admin</a>
+                    </div>
+                    <div id="nav_people" class="nav-button">
+                        <a href="javascript:;">
+                            <i class="fa-user"></i>
+                        </a>
+                    </div>
+                    <div id="nav_star" class="nav-button">
+                        <a href="javascript:;">
+                            <i class="fa-star"></i>
+                        </a>
+                    </div>
+                    <div id="nav_map" class="nav-button">
+                        <a href="javascript:;">
+                            <i class="fa-globe"></i>
+                        </a>
+                    </div>
+                    <div id="nav_close" class="nav-button">
+                        <a href="javascript:;">
+                            <i class="fa-off"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="topToolBar">
+            <div class="bar-inner">
+                <div id="bar_icon">
+                    <a class="bar-icon">
+                        <i class="icon-yelp"></i>
+                    </a>
+                </div>
+                <div id="fileButtons">
+                    <ul class="fileOptions">
+                        <li id="file_new" class="fileOption">
+                            <a href="javascript:;" class="toolBtn"><i class="fa-plus"></i></a>
+                            <div class="subOptions">
+                                <ul class="fileOptionItems">
+                                    <li class="newTab"><span class="option-icon">
+                                        <img src="Content/Images/icons/report_icon.png" /></span><span>Report</span></li>
+                                    <li class="newView"><span class="option-icon">
+                                        <img src="Content/Images/icons/view_icon.png" /></span><span>View</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="file_open" class="fileOption">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-folder-open"></i>
+                            </a>
+                            <input type="file" />
+                        </li>
+                        <li id="file_save" class="fileOption">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-save"></i>
+                            </a>
+                        </li>
+                        <!-- <li class="fileOption">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-save"></i>
+                            </a>
+                        </li>-->
+                        <li class="fileOption">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-print"></i>
+                            </a>
+                        </li>
+                        <li class="fileOption">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-remove"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="chartTypePaneButtons">
+                    <ul class="chartTypes">
+                        <li id="pie" class="chartType">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="icon-pie" title="pie"></i>
+                            </a>
+                        </li>
+                        <li id="line" class="chartType">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="icon-stats" title="line"></i>
+                            </a>
+                        </li>
+                        <li id="bar" class="chartType">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="icon-bars" title="bar"></i>
+                            </a>
+                        </li>
+                        <li id="area" class="chartType">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="icon-bars2" title="multibar"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="tableButtons">
+                    <ul class="tableOptions">
+                        <li class="tableOption" id="grid1">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-table"></i>
+                            </a>
+                        </li>
+                        <li class="tableOption" id="grid2">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-th"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="doButtons">
+                    <ul class="doOptions">
+                        <li class="doOption undo">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-undo"></i>
+                            </a>
+                        </li>
+                        <li class="doOption redo">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-repeat"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="tabSwitchButtons">
+                    <ul class="tabSwitchOptions">
+                        <li class="tabSwitchOption">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="icon-tablet"></i>
+                            </a>
+                            <div class="subOptions">
+                                <ul class="tabSwitchOptionItems"></ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="refreshButton">
+                    <ul class="refreshOptions">
+                        <li class="refreshOption">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="fa-refresh"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="switchButton">
+                    <ul class="switchOptions">
+                        <li class="switchOption">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="icon-loop"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="viewModalButtons">
+                    <ul class="viewModalOptions">
+                        <li class="viewModalOption">
+                            <a href="javascript:;" class="toolBtn">
+                                <i class="icon-table2"></i>
+                            </a>
+                            <div class="subOptions" id="viewModal">
+                                <ul class="viewModalOptionItems">
+                                    <li data-id="1c">
+                                        <img src="Content/Images/icons/one-row.png" />
+                                    </li>
+                                    <li data-id="1r">
+                                        <img src="Content/Images/icons/one-column.png" />
+                                    </li>
+                                    <li data-id="2c">
+                                        <img src="Content/Images/icons/two-columns.png" />
+                                    </li>
+                                    <li data-id="2r">
+                                        <img src="Content/Images/icons/two-rows.png" />
+                                    </li>
+                                    <li data-id="3c">
+                                        <img src="Content/Images/icons/three-columns.png" />
+                                    </li>
+                                    <!--
+                                    <li data-id="3r">
+                                        <img src="Content/Images/icons/three-rows.png" >
+                                    </li>-->
+                                    <li data-id="4">
+                                        <img src="Content/Images/icons/quaters.png" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="clearButton">
+                    <ul class="clearOptions">
+                        <li class="clearOption">
+                            <a id="clearviewbtn" href="javascript:;" class="toolBtn">
+                                <i class="icon-remove"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="help-info">
+                <i class="fa-info-circle" title="help"></i>
+            </div>
+        </div>
+    </div>
+    <div id="contentWrapper">
+        <div id="westRegion">
+            <div id="westViewTabs">
+                <ul>
+                    <li id="viewTab1" class="viewTab">
+                        <span id="viewTabLabel1">DataSubjects</span>
+                        <div id="westViewTab-1" class="westViewTab free">
+                            <div class="westViewTabHeader">
+                                <a class="dock" target="_self" href="javascript:;"></a>
+                                <a class="undock" href="javascript:;"></a>
+                            </div>
+                            <div id="bindSubjects">
+                                <h4>Data Subjects</h4>
+                                <div class="bindDataSubject" id="bindDataSubject">
+
+                                    <select id="dataSubjectSelection"></select>
+
+                                    <div class="subjectButton">
+                                        <span></span><span></span><span></span>
+                                    </div>
+
+                                </div>
+                                <div class="bindMeasuresAndDimensions" id="bindMeasuresAndDimensions">
+                                    <div id="bindDimensions">
+                                        <h5 class="measureAndDimensionLabel hide">Dimensions</h5>
+                                        <ul id="dimensionsList" data-id="Dimensions"></ul>
+                                    </div>
+                                    <div id="bindMeasures">
+                                        <h5 class="measureAndDimensionLabel hide">Measures</h5>
+                                        <ul id="measuresList" data-id="Measures"></ul>
+                                    </div>
+                                </div>
+                                <div id="bindFields" class="bindFields">
+                                    <h4>Drag above field to following box:</h4>
+                                    <div id="filterBox" class="fieldBox">
+                                        <h5>Filter:</h5>
+                                        <ul class="fielditems"></ul>
+                                    </div>
+                                    <div id="rowBox" class="fieldBox">
+                                        <h5>Axis Fields(Categories):</h5>
+                                        <ul class="fielditems"></ul>
+                                    </div>
+                                    <div id="columnBox" class="fieldBox">
+                                        <h5>Column:</h5>
+                                        <ul></ul>
+                                    </div>
+                                    <div id="dataBox" class="fieldBox">
+                                        <h5>Data:</h5>
+                                        <ul class="fielditems"></ul>
+                                    </div>
+                                    <div id="updateChartButton" class="hide"><i class="icon-forward2"></i></div>
+                                </div>
+                                <div id="bindDataSubjectDescription" class="description">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="viewTab2" class="viewTab">
+                        <span id="viewTabLabel2">Widgets</span>
+                        <div id="westViewTab-2" class="westViewTab free">
+                            <div class="westViewTabHeader">
+                                <a class="dock" target="_self" href="javascript:;"></a>
+                                <a class="undock" href="javascript:;"></a>
+                            </div>
+                            <div id="bindSubjectViews">
+                                <h4>Widgets</h4>
+                                <ul class="bindViewsBox">
+                                    <li class="bindViewsTree">
+                                        <h5>Wizard</h5>
+                                        <ul class="bindViewsLists">
+                                            <li class="bindViewsList">
+                                                <h5>Wizard1</h5>
+                                                <ul class="bindViewsItems">
+                                                    <li class="bindViewsItem" x-data="name" v-data="stature" type="pie">View1</li>
+                                                    <li class="bindViewsItem" x-data="name" v-data="salary,bonus" type="column">View2</li>
+                                                    <li class="bindViewsItem" x-data="name" v-data="family,children" type="column">View3</li>
+                                                </ul>
+                                            </li>
+                                            <li class="bindViewsList">
+                                                <h5>Wizard2</h5>
+                                                <ul class="bindViewsItems">
+                                                    <li class="bindViewsItem" x-data="name" v-data="age" type="area">View1</li>
+                                                    <li class="bindViewsItem" x-data="name" v-data="workhour" type="line">View2</li>
+                                                    <li class="bindViewsItem" x-data="company" v-data="distance" type="pie">View3</li>
+                                                    <li class="bindViewsItem" x-data="department" v-data="bonus" type="column">View4</li>
+                                                </ul>
+                                            </li>
+                                            <li class="bindViewsList">
+                                                <h5>Wizard3</h5>
+                                                <ul class="bindViewsItems">
+                                                    <li class="bindViewsItem" x-data="name" v-data="family" type="area">View1</li>
+                                                    <li class="bindViewsItem" x-data="name" v-data="salary" type="line">View2</li>
+                                                    <li class="bindViewsItem" x-data="company" v-data="bonus" type="pie">View3</li>
+                                                    <li class="bindViewsItem" x-data="department" v-data="workhour" type="bar">View4</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="viewTab3" class="viewTab">
+                        <span id="viewTabLabel3">GlobalFilters</span>
+                        <div id="westViewTab-3" class="westViewTab free">
+                            <div class="westViewTabHeader">
+                                <a class="dock" target="_self" href="javascript:;"></a>
+                                <a class="undock" href="javascript:;"></a>
+                            </div>
+                            <div id="bindGlobalFilters">
+                                <h4>Global Filters</h4>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="centerRegion">
+            <div id="chartPaneContainer">
+                <div id="chartMainPane" class="hide">
+                    <div id="chartPaneTabs">
+                        <div class="jCarouselLiteContainer">
+                            <div class="jCarouselLite">
+                                <ul class="labelTabs">
+                                    <li><a href="#chartPaneTab-1"><span>ChartTab1</span><input class="hide" type="text" value="ChartTab1" size="10" /></a><!--<span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span>--></li>
+                                </ul>
+                            </div>
+                            <div class="jCarouselButtons">
+                                <span class="prev"></span>
+                                <span class="next"></span>
+                                <span class="addTabButton"></span>
+                            </div>
+                        </div>
+                        <div id="chartPaneTab-1" class="tabPane">
+                            <div class="showChart"></div>
+                            <div class="showDescription">
+                                <h5>Description:</h5>
+                                <div class="dexcriptionText">
+                                    <textarea draggable="false" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="chartMainView" class="hide">
+                    <div id="viewToolBar" class="hide">
+                    </div>
+                    <div id="viewContainer">
+                        <div id="oneColumnView" class="columnView default">
+                            <ul class="viewBox viewBox1"></ul>
+                        </div>
+                        <div id="oneRowView" class="columnView rowView hide">
+                            <ul class="viewBox viewBox1"></ul>
+                        </div>
+                        <div id="twoColumnView" class="columnView hide">
+                            <ul class="viewBox viewBox1"></ul>
+                            <ul class="viewBox viewBox2"></ul>
+                        </div>
+                        <div id="twoRowView" class="columnView rowView hide">
+                            <ul class="viewBox viewBox1"></ul>
+                            <ul class="viewBox viewBox2"></ul>
+                        </div>
+                        <div id="threeColumnView" class="columnView hide">
+                            <ul class="viewBox viewBox1"></ul>
+                            <ul class="viewBox viewBox2"></ul>
+                            <ul class="viewBox viewBox3"></ul>
+                        </div>
+                        <!-- <div id="threeRowView" class="columnView rowView hide">
+                            <ul class="viewBox viewBox1"></ul>
+                            <ul class="viewBox viewBox2"></ul>
+                            <ul class="viewBox viewBox3"></ul>
+                        </div>-->
+                        <div id="quarterView" class="columnView quarterView hide">
+                            <ul class="viewBox viewBox1"></ul>
+                            <ul class="viewBox viewBox2"></ul>
+                            <ul class="viewBox viewBox3"></ul>
+                            <ul class="viewBox viewBox4"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="propertyPanel" class="hide">
+                <div id="propertyHeader">
+                    <i class="propertyArrow fa-arrow-circle-left"></i>
+                    <h4>Property</h4>
+                </div>
+                <div id="propertyBox" class="hide accordionBox">
+                    <div id="chartPropertyBox" class="hide">
+                        <div class="p_accordionHeader">Common Property</div>
+                        <div class="p_accordionContent">
+                            <div id="comPropBox" class="hide">
+                                <fieldset>
+                                    <legend>ChartArea</legend>
+                                    <div id="cABgBox" class="dpBox">
+                                        <label>Background:</label>
+                                        <input id="c_colorpicker" data-role="colorpicker" style="">
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>PlotArea</legend>
+                                    <div id="pABgBox" class="dpBox">
+                                        <label>Background:</label>
+                                        <input id="p_colorpicker" data-role="colorpicker" style="">
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div id="noCommonDataTip">No data choosed</div>
+                        </div>
+                        <div class="p_accordionHeader">Data Property</div>
+                        <div class="p_accordionContent">
+                            <select id="dataPropSel" class="hide"></select>
+                            <div id="dataPropBox" class="hide propBox">
+                                <fieldset>
+                                    <legend>Data</legend>
+                                    <div id="reLeNameBox" class="dpBox">
+                                        <label>Name:</label>
+                                        <input id="reLeNameInput" type="text">
+                                    </div>
+                                    <div id="typeBox" class="dpBox">
+                                        <label>Type:</label>
+                                        <select id="dataTypePropSel">
+                                            <option>Choose type:</option>
+                                            <option>pie</option>
+                                            <option>line</option>
+                                            <option>bar</option>
+                                            <option>area</option>
+                                        </select>
+                                    </div>
+                                    <div id="gapBox" class="dpBox">
+                                        <label>Gap:</label>
+                                        <input id="gap" type="number" step="0.1" style="width: 60px;" />
+                                        <button id="getGap" class="k-button">
+                                            Set
+                                        </button>
+                                    </div>
+                                    <div id="spacepBox" class="dpBox">
+                                        <label>Space:</label>
+                                        <input id="spacing" type="number" step="0.1" style="width: 60px;" />
+                                        <button id="getSpacing" class="k-button">Set</button>
+                                    </div>
+                                    <div id="colorBox" class="dpBox">
+                                        <label>Background:</label>
+                                        <input id="d_colorpicker" data-role="colorpicker" style="">
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Legend</legend>
+                                    <div id="legendVisiBox" class="dpBox">
+                                        <label>Visiblity:</label>
+                                        <input type="radio" name="legendVisi" value="true" checked="checked"><span>Visible</span>
+                                        <input type="radio" name="legendVisi" value="false"><span>Hidden</span>
+                                    </div>
+                                    <div id="legendPosBox" class="dpBox">
+                                        <label>Position:</label>
+                                        <input type="radio" name="legendPos" value="top" checked="checked"><span>Top</span>
+                                        <input type="radio" name="legendPos" value="left"><span>Left</span>
+                                        <input type="radio" name="legendPos" value="right"><span>Right</span>
+                                        <input type="radio" name="legendPos" value="bottom"><span>Bottom</span>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Label</legend>
+                                    <div id="labelVisiBox" class="dpBox">
+                                        <label>Visibility:</label>
+                                        <input type="radio" name="labelVisi" value="true" checked="checked"><span>Visible</span>
+                                        <input type="radio" name="labelVisi" value="false"><span>Hidden</span>
+                                    </div>
+                                    <div id="labelFormatBox" class="dpBox">
+                                        <label>Format:</label>
+                                        <input id="labelFormatInput" type="text">
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Tooltip</legend>
+                                    <div id="tooltipVisiBox" class="dpBox">
+                                        <label>Visibility:</label>
+                                        <input type="radio" name="tooltipVisi" value="true" checked="checked"><span>Visible</span>
+                                        <input type="radio" name="tooltipVisi" value="false"><span>Hidden</span>
+                                    </div>
+                                    <div id="tooltipTemplateBox" class="dpBox">
+                                        <label>Template:</label>
+                                        <input id="tooltipTemplateInput" type="text">
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div id="noDataTip">No data choosed</div>
+                        </div>
+                        <div class="p_accordionHeader">Row Property</div>
+                        <div class="p_accordionContent">
+                            <select id="rowPropSel" class="hide">
+                                <option>Row1</option>
+                                <option>Row2</option>
+                            </select>
+                            <div id="rowPropBox" class="hide propBox">
+                                <fieldset>
+                                    <legend>Row</legend>
+                                </fieldset>
+                            </div>
+                            <div id="noRowTip">No row choosed</div>
+                        </div>
+                        <div class="p_accordionHeader">Column Property</div>
+                        <div class="p_accordionContent">
+                            <select id="columnPropSel" class="hide">
+                                <option>Column1</option>
+                                <option>Column2</option>
+                            </select>
+                            <div id="columnPropBox" class="hide propBox">
+                                <fieldset>
+                                    <legend>Column</legend>
+                                </fieldset>
+                            </div>
+                            <div id="noColumnTip">No column choosed</div>
+                        </div>
+                    </div>
+                    <div id="gridPropertyBox" class="hide">
+                        <div id="gridPropBox" class="hide">
+                            <fieldset>
+                                <legend>Sort</legend>
+                                <div id="gridSortBox">
+                                    <label>Sortable:</label>
+                                    <input type="radio" name="sortable" value="true" current="false"><span>True</span>
+                                    <input type="radio" name="sortable" value="false" checked="checked" current="true"><span>False</span>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Edit</legend>
+                                <div id="gridEditBox">
+                                    <label>Editable:</label>
+                                    <input type="radio" name="editable" value="true" current="false"><span>True</span>
+                                    <input type="radio" name="editable" value="false" checked="checked" current="true"><span>False</span>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Filter</legend>
+                                <div id="gridFilterBox">
+                                    <label>Filterable:</label>
+                                    <input type="radio" name="filterable" value="true" current="false"><span>True</span>
+                                    <input type="radio" name="filterable" value="false" checked="checked" current="true"><span>False</span>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Columns</legend>
+                                <select id="gridColumnSel"></select>
+                                <div id="gridColumnBox" class="hide">
+                                    <div id="gridHeaderTitle">
+                                        <label>Title:</label>
+                                        <input class="columnTitle" type="text">
+                                    </div>
+                                    <div id="gridHeaderAlignBox">
+                                        <label>Title Align:</label>
+                                        <input type="radio" name="headerAlignable" value="left" checked="checked"><span>Left</span>
+                                        <input type="radio" name="headerAlignable" value="center"><span>Center</span>
+                                        <input type="radio" name="headerAlignable" value="right"><span>Right</span>
+                                    </div>
+                                    <div id="gridColAlignBox">
+                                        <label>Column Align:</label>
+                                        <input type="radio" name="colAlignable" value="left" checked="checked"><span>Left</span>
+                                        <input type="radio" name="colAlignable" value="center"><span>Center</span>
+                                        <input type="radio" name="colAlignable" value="right"><span>Right</span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div id="noDataGridTip">No data choosed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="subjectDialog" class="hide">
+        <div id="subjectDialogHeader">
+            <h4>Data Subject</h4>
+        </div>
+        <div id="subjectDialogMenu">
+            <span class="save"></span>
+            <span class="close"></span>
+        </div>
+        <div id="subjectContainer">
+            <div id="defaultSubjects" class="subjectBox">
+                <div class="subjectSelection">
+                    <span>Cubes:</span>
+                    <select class="defaultSelection"></select>
+                </div>
+                <div class="selectionList hide">
+                    <div class="selectionBox">
+                        <div class="dimensionsBox">
+                            <h5 class="hide">Dimensions</h5>
+                            <ul class="dimensionsList" pos="0"></ul>
+                        </div>
+                        <div class="measuresBox">
+                            <h5 class="hide">Measues</h5>
+                            <ul class="measuresList" pos="1"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="currentSubjects" class="subjectBox">
+                <div class="subjectSelection">
+                    <span>Subjects:</span>
+                    <select class="currentSelection"></select>
+                    <div id="currentSubjectButtons">
+                        <span class="add"></span>
+                        <span class="remove hide"></span>
+                        <span class="rename hide"></span>
+                    </div>
+                </div>
+
+                <div class="selectionList hide">
+                    <div class="selectionBox">
+                        <div class="dimensionsBox">
+                            <h5 class="hide">Dimensions</h5>
+                            <ul class="dimensionsList" pos="0"></ul>
+                        </div>
+                        <div class="measuresBox">
+                            <h5 class="hide">Measues</h5>
+                            <ul class="measuresList" pos="1"></ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="subjectDescription hide">
+                    <textarea class="hide" draggable="false"></textarea>
+                </div>
+            </div>
+            <div id="addSubjectNameBox" class="hide">
+                <label>Name</label>
+                <input type="text" />
+                <div class="addSubjectNameButtons">
+                    <button class="addName">Add</button>
+                    <button class="cancelName">Cancel</button>
+                </div>
+            </div>
+            <div id="subjectRenameBox" class="hide">
+                <label>New Name</label>
+                <input type="text" />
+                <div class="subjectReNameButtons">
+                    <button class="reName">Add</button>
+                    <button class="celName">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="filterDialog" class="hide">
+        <div id="filterDialogMenu">
+            <span class="save"></span>
+            <span class="close"></span>
+            <!--<span class="refresh"></span>-->
+        </div>
+        <div id="filterContainer">
+            <div class="filterBox">
+                <input type="checkbox" name="cBox1" id="checkBox1" value="1" />
+                <div class="filterPanel">
+                    <!--<select class="filterSelect">
+            </select>-->
+                    <div class="filterSelectHeader">
+                        <span>Filter Items:</span>
+                        <span class="filterSelectIcon"><i class="fa-sort-down"></i></span>
+                    </div>
+                    <ul class="filterSelectItems"></ul>
+                </div>
+            </div>
+            <div id="conditionBox">
+                <input type="checkbox" name="cBox2" id="checkBox2" value="1" />
+                <div class="conditionPanel">
+                    <select class="filterSelect"></select>
+                    <select class="conditionSelect"></select>
+                    <input class="valueSelect" type="text" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="helpInfoDialog" class="hide">
+        <div id="helpInfoWizard" class="swMain">
+            <ul>
+                <li>
+                    <a href="#help_step-1">
+                        <span class="stepNumber">1</span>
+                        <span class="stepDesc">Report Step<br />
+                            <small>Steps to build new report</small>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#help_step-2">
+                        <span class="stepNumber">2</span>
+                        <span class="stepDesc">View Step<br />
+                            <small>Steps to build new view</small>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <div id="help_step-1">
+                <h2 class="StepTitle">Report Builder</h2>
+                <div></div>
+            </div>
+            <div id="help_step-2">
+                <h2 class="StepTitle">View Builder</h2>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!--<div id="editDialog" class="hide">
+    </div>-->
+    <div id="chartContextMenu" class="hide">
+        <ul>
+            <li id="openChart">
+                <img src="Content/Images/16/folder.png" />
+                Open</li>
+            <li id="emailChart">
+                <img src="Content/Images/16/email.png" />
+                Email</li>
+            <li id="saveChart">
+                <img src="Content/Images/16/disk.png" />
+                Save</li>
+            <li id="closeChart">
+                <img src="Content/Images/16/cross.png" />
+                Close</li>
+
+        </ul>
+    </div>
+    <div id="tempViewContainer" class="hide"></div>
+    <div id="tempChartTabPaneContainer" class="hide"></div>
+</body>
+</html>
